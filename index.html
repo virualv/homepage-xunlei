@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-Ch">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>fullPage.js+webpack模仿迅雷首页</title>
+</head>
+<body>
+
+  <article id="wrapper">
+
+    <header id="header" class="header">
+      <h1 class="logo">
+        <a href="javascript:;">
+          <img src="${require('./src/assets/imgs/logo.png')}">
+        </a>
+      </h1>
+      <ul class="nav_list">
+        <li class="nav_li">
+          <a href="javascript:;">
+            <i class="ic ic_product"></i>
+            产品中心
+          </a>
+        </li>
+        <li id="moreWrap" class="nav_li">
+          <a id="moreBtn" href="javascript:;">
+            <i class="ic ic_more"></i>
+            更多
+          </a>
+          <div id="moreMenu" class="more_box">
+            <ul class="menu_list">
+              <li class="menu_li">
+                <a href="javascript:;">菜单1</a>
+              </li>
+              <li class="menu_li">
+                <a href="javascript:;">菜单2</a>
+              </li>
+              <li class="menu_li">
+                <a href="javascript:;">菜单3</a>
+              </li>
+              <li class="menu_li">
+                <a href="javascript:;">菜单4</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </header>
+
+    <nav id="nav" class="nav_box">
+      <a data-menuanchor="pg1" href="javascript:;" class="cur"></a>
+      <a data-menuanchor="pg2" href="javascript:;"></a>
+      <a data-menuanchor="pg3" href="javascript:;"></a>
+      <a data-menuanchor="pg4" href="javascript:;"></a>
+      <a data-menuanchor="pg5" href="javascript:;"></a>
+    </nav>
+
+    <section class="page_box page_box_1">
+      <div class="page_box_inner">
+        <div class="bg_box">
+          <img src="${require('./src/assets/imgs/bg_page_1.jpg')}">
+        </div>
+        <div class="tb_box">
+          技术共享娱乐
+        </div>
+        <div class="btn_box">
+          <a href="javascript:;">下载迅雷产品</a>
+          <a href="javascript:;"></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page_box page_box_2">
+      <div class="page_box_inner">
+        <div id="slideMenu" class="slide_nav_box">
+          <a data-anchor="a" href="javascript:;" class="cur" title="Mac版本"></a>
+          <a data-anchor="b" href="javascript:;" title="Windows版本（VIP专享）"></a>
+          <a data-anchor="c" href="javascript:;" title="Windows版本"></a>
+          <a data-anchor="d" href="javascript:;" title="Android版本"></a>
+          <a data-anchor="e" href="javascript:;" title="IOS版本"></a>
+        </div>
+
+        <div data-id="a" class="slide slide_1 show">
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_slide_0.jpg')}">
+          </div>
+          <a href="javascript:;" class="txt_link">
+            迅雷Mac
+          </a>
+          <p class="txt_title">
+            轻体验，大改变
+          </p>
+          <a href="javascript:;" class="btn_download">
+            立即下载
+          </a>
+          <p class="txt_zan">
+            <a href="javascript:;"></a>
+            233362人赞过
+          </p>
+        </div>
+
+        <div data-id="b" class="slide slide_2">
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_slide_1.png')}">
+          </div>
+          <a href="javascript:;" class="txt_link">
+            迅雷U享版本
+          </a>
+          <p class="txt_title">
+            优享会员下载时光
+          </p>
+          <a href="javascript:;" class="btn_download">
+            立即下载
+          </a>
+          <p class="txt_zan">
+            <a href="javascript:;"></a>
+            417609人赞过
+          </p>
+        </div>
+
+        <div data-id="c" class="slide slide_3">
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_slide_2.jpg')}">
+          </div>
+          <a href="javascript:;" class="txt_link">
+            迅雷9
+          </a>
+          <p class="txt_title">
+            精彩，一下就有
+          </p>
+          <a href="javascript:;" class="btn_download">
+            立即下载
+          </a>
+          <p class="txt_zan">
+            <a href="javascript:;"></a>
+            825527人赞过
+          </p>
+          <a href="javascript:;" class="btn_lixian">下载离线安装包</a>
+        </div>
+
+        <div data-id="d" class="slide slide_4">
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_slide_3.jpg')}">
+          </div>
+          <a href="javascript:;" class="txt_link">
+            迅雷Android
+          </a>
+          <p class="txt_title">
+            超有料，不寂寞
+          </p>
+          <a href="javascript:;" class="btn_download">
+            立即下载
+          </a>
+          <p class="txt_zan">
+            <a href="javascript:;"></a>
+            592863人赞过
+          </p>
+        </div>
+
+        <div data-id="e" class="slide slide_5">
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_slide_4.jpg')}">
+          </div>
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_slide_3.jpg')}">
+          </div>
+          <a href="javascript:;" class="txt_link">
+            迅雷iOS
+          </a>
+          <p class="txt_title">
+            发现奇趣，享悦时光
+          </p>
+          <a href="javascript:;" class="btn_download">
+            立即下载
+          </a>
+          <p class="txt_zan">
+            <a href="javascript:;"></a>
+            765469人赞过
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="page_box page_box_3">
+      <div class="page_box_inner">
+
+        <div class="product product_1">
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_product_1.jpg')}">
+          </div>
+          <div class="product_box">
+            <div class="product_ic"></div>
+            <p class="product_txt">
+              产品一
+              <i class="pc_ic"></i>
+            </p>
+          </div>
+          <div class="hover_box">
+            <a href="javascript:;" class="txt_link">
+              产品一
+            </a>
+            <p class="txt_brief">
+              XXXXXXXXXXXXXXX
+            </p>
+            <a href="javascript:;" class="btn_download">
+              立即下载
+            </a>
+            <p class="txt_zan">
+              <a href="javascript:;"></a>
+              34390人赞过
+            </p>
+          </div>
+        </div>
+
+        <div class="product product_2">
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_product_2.jpg')}">
+          </div>
+          <div class="product_box">
+            <div class="product_ic"></div>
+            <p class="product_txt">
+              产品二
+              <i class="pc_ic"></i>
+              <i class="pc_mobile"></i>
+            </p>
+          </div>
+          <div class="hover_box">
+            <a href="javascript:;" class="txt_link">
+              产品二
+            </a>
+            <p class="txt_brief">
+              XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+              <br>
+              XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+              <br>
+              XXXXXXXXXX
+            </p>
+            <a href="javascript:;" class="btn_download">
+              PC端下载
+            </a>
+            <a href="javascript:;" class="btn_download">
+              移动端下载
+            </a>
+            <p class="txt_zan">
+              <a href="javascript:;"></a>
+              34390人赞过
+            </p>
+          </div>
+        </div>
+
+        <div class="product product_3">
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_product_3.jpg')}">
+          </div>
+          <div class="product_box">
+            <div class="product_ic"></div>
+            <p class="product_txt">
+              产品三
+              <i class="pc_ic"></i>
+            </p>
+          </div>
+          <div class="hover_box">
+            <a href="javascript:;" class="txt_link">
+              产品三
+            </a>
+            <p class="txt_brief">
+              XXXXXXXXXXXXXXX
+            </p>
+            <a href="javascript:;" class="btn_download">
+              立即下载
+            </a>
+            <p class="txt_zan">
+              <a href="javascript:;"></a>
+              34390人赞过
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="page_box page_box_4">
+      <div class="page_box_inner">
+
+        <div class="product product_4">
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_product_4.png')}">
+          </div>
+          <div class="product_box">
+            <div class="product_ic"></div>
+            <p class="product_txt">
+              产品四
+              <i class="pc_ic"></i>
+              <i class="pc_mobile"></i>
+            </p>
+          </div>
+          <div class="hover_box">
+            <div class="hover_box">
+              <a href="javascript:;" class="txt_link">
+                产品四
+              </a>
+              <p class="txt_brief">
+                XXXXXXXXXXXXXXX
+              </p>
+              <a href="javascript:;" class="btn_download">
+                PC端下载
+              </a>
+              <a href="javascript:;" class="btn_download">
+                移动端下载
+              </a>
+              <p class="txt_zan">
+                <a href="javascript:;"></a>
+                34390人赞过
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="product product_5">
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_product_5.jpg')}">
+          </div>
+          <div class="product_box">
+            <div class="product_ic"></div>
+            <p class="product_txt">
+              产品五
+              <i class="pc_mobile"></i>
+            </p>
+          </div>
+          <div class="hover_box">
+            <a href="javascript:;" class="txt_link">
+              产品五
+            </a>
+            <p class="txt_brief">
+              XXXXXXXXXXXXXXX
+            </p>
+            <a href="javascript:;" class="btn_download">
+              立即下载
+            </a>
+            <p class="txt_zan">
+              <a href="javascript:;"></a>
+              34390人赞过
+            </p>
+          </div>
+        </div>
+
+        <div class="product product_6">
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_product_6.png')}">
+          </div>
+          <div class="product_box">
+            <div class="product_ic"></div>
+            <p class="product_txt">
+              产品六
+              <i class="pc_mobile"></i>
+            </p>
+          </div>
+          <div class="hover_box">
+            <a href="javascript:;" class="txt_link">
+              产品六
+            </a>
+            <p class="txt_brief">
+              XXXXXXXXXXXXXXX
+            </p>
+            <a href="javascript:;" class="btn_download">
+              立即下载
+            </a>
+            <p class="txt_zan">
+              <a href="javascript:;"></a>
+              34390人赞过
+            </p>
+          </div>
+        </div>
+
+        <div class="product product_7">
+          <div class="bg_box">
+            <img src="${require('./src/assets/imgs/bg_product_7.png')}">
+          </div>
+          <div class="product_box">
+            <div class="product_ic"></div>
+            <p class="product_txt">
+              产品七
+              <i class="pc_ic"></i>
+            </p>
+          </div>
+          <div class="hover_box">
+            <a href="javascript:;" class="txt_link">
+              产品七
+            </a>
+            <p class="txt_brief">
+              XXXXXXXXXXXXXXX
+            </p>
+            <a href="javascript:;" class="btn_download">
+              立即下载
+            </a>
+            <p class="txt_zan">
+              <a href="javascript:;"></a>
+              34390人赞过
+            </p>
+          </div>
+        </div>
+      
+      </div>
+    </section>
+
+    <section class="page_box page_box_5">
+      <div class="page_box_inner">
+        <div class="bg_box">
+          <img src="${require('./src/assets/imgs/bg_product_8.jpg')}">
+        </div>
+        <div class="product product_8">
+          <a href="javascript:;" class="txt_link">
+            产品八
+          </a>
+          <p class="txt_title">
+            XXXXXXXXXXXX
+          </p>
+          <p class="txt_brief">
+            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+            <br>
+            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+          </p>
+          <a class="txt_btn" href="javascript:;">
+            了解详情
+          </a>
+          <p class="txt_zan">
+            <a href="javascript:;"></a>
+            34390人赞过
+          </p>
+        </div>
+        <div class="footer">
+          <div class="btns_box">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+          </div>
+          <div class="big_links">
+            <a href="javascript:;">XXXXX</a>
+            <span>|</span>
+            <a href="javascript:;">XXXXX</a>
+            <span>|</span>
+            <a href="javascript:;">XXXXX</a>
+            <span>|</span>
+            <a href="javascript:;">XXXXX</a>
+            <span>|</span>
+            <a href="javascript:;">XXXXX</a>
+            <span>|</span>
+            <a href="javascript:;">XXXXX</a>
+          </div>
+          <div class="links">
+            <a href="javascript:;">XXXXXXXX</a>
+            <span>|</span>
+            <a href="javascript:;">XXXXXXXX</a>
+            <span>|</span>
+            <a href="javascript:;">XXXXXXXX</a>
+            <span>|</span>
+            <a href="javascript:;">XXXXXXXX</a>
+          </div>
+          <p>
+            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+          </p>
+          <div class="safe_links">
+            <a href="javascript:;">XXXXXXXXXXXX</a>
+            <a href="javascript:;">XXXXXXXXXXXX</a>
+            <a href="javascript:;">XXXXXXXXXXXX</a>
+            <a href="javascript:;">XXXXXXXXXXXX</a>
+            <a href="javascript:;">XXXXXXXXXXXX</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</body>
+</html>
