@@ -1,5 +1,5 @@
-import './libs/fullpage.js/jquery.fullpage.min.css'
-import './libs/fullpage.js/jquery.fullpage.min.js'
+import 'fullpage.css'
+import 'fullpage.js'
 
 import './scss/style.scss'
 

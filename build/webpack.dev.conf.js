@@ -6,6 +6,37 @@ module.exports = {
     overlay: true,
   },
 
+  module: {
+    rules: [
+      {
+        test: /\.s?css$/,
+        use: [
+          {
+            loader: 'style-loader',
+            options: { sourceMap: true }
+          },
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: [
+                require('postcss-cssnext')
+              ]
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: true }
+          },
+        ]
+      },
+    ]
+  },
+
   plugins: [
 
   ]

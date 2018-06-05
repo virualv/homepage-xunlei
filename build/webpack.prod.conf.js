@@ -1,33 +1,81 @@
 const path = require('path')
-const glob = require('glob-all')
 const webpack = require('webpack')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-// const PurifyCSS = require('purifycss-webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const origin = 'file:///D:/wenyi/projects/homepage-xunlei/dist'
+// const origin = 'https://yshenhua.github.io/homepage-xunlei'
+
+const extractCss = new ExtractTextWebpackPlugin('css/vendor/jquery.fullpage.min.[contenthash:5].css')
+const extractScss = new ExtractTextWebpackPlugin('css/[name]-bundle-[contenthash:5].css')
 
 module.exports = {
+  entry: {
+    'jquery': ['jquery'],
+    'fullpage.js': ['fullpage.js']
+  },
+
   output: {
     publicPath: origin + '/'
   },
 
-  plugins: [
-    new ExtractTextWebpackPlugin({
-      filename: 'css/[name]-bundle-[hash:5].css'
-    }),
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        exclude: /\.scss$/,
+        use: extractCss.extract({
+          fallback: { loader: 'style-loader' },
+          use: [
+            {
+              loader: 'css-loader',
+              options: { minimize: true }
+            },
+          ]
+        })
+      },
 
-    // new PurifyCSS({
-    //   minimize: true,
-    //   paths: glob.sync([
-    //     path.join(__dirname, '../*.html'),
-    //     path.join(__dirname, '../src/*.js')
-    //   ])
-    // }),
+      {
+        test: /\.scss$/,
+        use: extractScss.extract({
+          fallback: {
+            loader: 'style-loader'
+          },
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [
+                  require('postcss-cssnext')
+                ]
+              }
+            },
+            {
+              loader: 'sass-loader'
+            },
+          ]
+        })
+      },
+
+    ]
+  },
+
+  plugins: [
+    new webpack.NamedChunksPlugin(),
+    new webpack.NamedModulesPlugin(),
+
+    extractCss,
+    extractScss,
 
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['vender', 'manifest'],
-      filename: 'js/vender/[name].min.js',
+      names: ['fullpage.js', 'jquery', 'manifest'],
+      filename: 'js/vendor/[name].min.[chunkhash:5].js',
       minChunks: Infinity
     }),
 
@@ -35,6 +83,7 @@ module.exports = {
 
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve(__dirname, '../')
-    })
+    }),
+
   ]
 }
